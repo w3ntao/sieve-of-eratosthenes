@@ -69,5 +69,5 @@ int main(int argc, char *argv[]) {
         wait(&pid);
     }
 
-    exit(0);
+    return 0;
 }
