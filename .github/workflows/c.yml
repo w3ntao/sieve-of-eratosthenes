@@ -1,4 +1,4 @@
-name: c
+name: C
 
 on:
   push:
@@ -22,4 +22,4 @@ jobs:
         cd primes-c;
         cmake -B build;
         cmake --build build;
-        ./build/primes 1000
+        ./build/primes 10000
