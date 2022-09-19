@@ -4,20 +4,17 @@
 #include <unistd.h>
 
 void sieve(int port_in) {
-    int number;
-    int divisor = -1;
     int pid = -1;
     int fd[2];
     pipe(fd);
 
-    while (read(port_in, &number, sizeof(number)) != 0) {
-        if (divisor == -1) {
-            divisor = number;
-            printf("prime %d\n", divisor);
-            fflush(stdout);
-            continue;
-        }
+    int divisor;
+    read(port_in, &divisor, sizeof(divisor));
+    printf("prime %d\n", divisor);
+    fflush(stdout);
 
+    int number;
+    while (read(port_in, &number, sizeof(number)) != 0) {
         if (number % divisor == 0) {
             continue;
         }

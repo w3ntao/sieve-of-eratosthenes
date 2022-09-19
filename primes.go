@@ -11,7 +11,9 @@ func sieve(read_in chan int, finish chan bool) {
 		finish <- true
 	}()
 
-	divisor := -1
+	divisor := <-read_in
+	fmt.Printf("prime %d\n", divisor)
+
 	fork := false
 	to_next_sieve := make(chan int)
 	for {
@@ -19,12 +21,6 @@ func sieve(read_in chan int, finish chan bool) {
 		if !open {
 			close(to_next_sieve)
 			return
-		}
-
-		if divisor == -1 {
-			divisor = number
-			fmt.Printf("prime %d\n", number)
-			continue
 		}
 
 		if number%divisor == 0 {
