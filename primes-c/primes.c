@@ -14,6 +14,7 @@ void sieve(int port_in) {
         if (divisor == -1) {
             divisor = number;
             printf("prime %d\n", divisor);
+            fflush(stdout);
             continue;
         }
 
