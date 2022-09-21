@@ -19,6 +19,16 @@ $ cmake --build build;
 $ ./build/primes 10000
 ```
 
+### C++
+[![c++](https://github.com/w3ntao/sieve-of-eratosthenes/actions/workflows/cpp.yml/badge.svg)](https://github.com/w3ntao/sieve-of-eratosthenes/actions/workflows/cpp.yml)
+```
+$ cd primes-cpp;
+$ cmake -B build;
+$ cmake --build build;
+$ ./build/primes 10000
+```
+
+
 ### Go
 [![go](https://github.com/w3ntao/sieve-of-eratosthenes/actions/workflows/go.yml/badge.svg)](https://github.com/w3ntao/sieve-of-eratosthenes/actions/workflows/go.yml)
 ```
